@@ -1,9 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
+import Main from "../Layout/Main";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <button className="btn btn-primary">Default</button>
-        ,
+        element:<Main></Main>,
+        children:[
+            {
+                
+            }
+        ]
     },
 ]);
