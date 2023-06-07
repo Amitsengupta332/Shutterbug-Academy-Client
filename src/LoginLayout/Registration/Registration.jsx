@@ -48,7 +48,7 @@ const Registration = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="w-1/2 ">
-                        <img src="https://img.freepik.com/free-vector/sign-up-concept-illustration_114360-7885.jpg?size=626&ext=jpg&uid=R96983164&ga=GA1.2.1036415892.1686067910&semt=ais" alt="" />
+                        <img src="https://images.pexels.com/photos/3585089/pexels-photo-3585089.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
@@ -64,21 +64,21 @@ const Registration = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                                    <input type="text" name='email' placeholder="email" className="input input-bordered" required />
                                 </div>
                                 {/* pass */}
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                                    <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 </div>
                                 {/* confirm pass */}
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Confirm Password</span>
                                     </label>
-                                    <input type="password" name='pass' placeholder="password" className="input input-bordered" />
+                                    <input type="password" name='pass' placeholder="password" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
