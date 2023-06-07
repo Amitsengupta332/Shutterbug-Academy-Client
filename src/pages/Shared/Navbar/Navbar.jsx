@@ -7,16 +7,12 @@ const Navbar = () => {
             <li><Link to='/'>Home</Link></li>
             <li><Link to=''>Instructors</Link></li>
             <li><Link to=''>Classes</Link></li>
-            {/* { */}
-            {/* // user?.email ? */}
-            <>
-                <li><Link to=''>Dashboard</Link></li>
-                <li><Link to='addToys'>UserProfile</Link></li>
-                <li><button   >Log Out</button></li> </>
-            {/* : */}
+            <li><Link to=''>Dashboard</Link></li>
+            <li><Link to='addToys'>UserProfile</Link></li>
+            <li><button   >Log Out</button></li>
             <li><Link to='/login'>Login</Link></li>
-            {/* } */}
         </>
+ 
     return (
         <div>
             <div className="navbar bg-base-200">
@@ -33,18 +29,18 @@ const Navbar = () => {
                     <img src="https://i.ibb.co/nn8fPHd/DALL-E-2023-06-06-23-54-13-photography-logo.png" alt="" className='avatar' width='50px' height='50px' />
                     <Link>Photography School</Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    {/* <ul className="menu menu-horizontal px-1">
-                        {navLink}
-                    </ul> */}
-                    
-                </div>
-                <div className="navbar-end">
-                    {/* <a className="btn">Button</a> */}
+                <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {navLink}
                     </ul>
+
                 </div>
+                {/* <div className="navbar-end">
+                    <a className="btn">Button</a> 
+                     <ul className="menu menu-horizontal px-1">
+                        {navLink}
+                    </ul>
+                </div> */}
             </div>
         </div>
     );
