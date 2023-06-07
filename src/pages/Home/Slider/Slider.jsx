@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Slider = () => {
     return (
-        <div>
+        <div >
             <Carousel className='text-center'>
                 <div className="relative">
                     <img src="https://img.freepik.com/free-photo/professional-camera-blurred_169016-10249.jpg?size=626&ext=jpg&uid=R96983164&ga=GA1.2.1036415892.1686067910&semt=ais" alt="Banner 1" />
