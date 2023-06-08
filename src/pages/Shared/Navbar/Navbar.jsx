@@ -21,19 +21,12 @@ const Navbar = () => {
                 user?.email ?
                     <>
                         <li><Link to=''>Dashboard</Link></li>
-                        <li><button>Log Out</button></li>
+                        <li><button onClick={handleLogOut}>Log Out</button></li>
                     </>
-
                     :
                     <li><Link to='/login'>Login</Link></li>
             }
-
-
-
-
-
         </>
-    // https://i.ibb.co/nn8fPHd/DALL-E-2023-06-06-23-54-13-photography-logo.png
     return (
         <div>
             <div className="navbar fixed z-10 bg-opacity-30 bg-black max-w-screen-xl text-white ">
@@ -48,7 +41,7 @@ const Navbar = () => {
                     </div>
                     {/* <a className="btn btn-ghost normal-case text-xl">daisyUI</a> */}
                     <Link to='/'><img src="https://i.ibb.co/nn8fPHd/DALL-E-2023-06-06-23-54-13-photography-logo.png" alt="" className='avatar mr-2' width='50px' height='50px' /></Link>
-                    <Link to='/'>Photography School</Link>
+                    <Link to='/'>Shutterbug Academy</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

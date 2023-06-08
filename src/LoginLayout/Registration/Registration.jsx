@@ -98,7 +98,6 @@ const Registration = () => {
                             <p className='text-center mt-3 text-green-500 mb-5' >
                                 {success}
                             </p>
-
                         </div>
                     </div>
                 </div>
