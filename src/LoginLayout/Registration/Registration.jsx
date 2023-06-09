@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { useForm } from 'react-hook-form';
+
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
@@ -29,7 +29,7 @@ const Registration = () => {
         } else if (!/[!@#$&*]/.test(password)) {
             setError('Password must have at least one special character');
         } else {
-            setError("Password meets the specified conditions.");
+            setSuccess("login succesfully");
         }
 
         createUser(email, password)

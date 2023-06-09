@@ -58,7 +58,10 @@ const Login = () => {
                                     <input className="btn btn-primary" type="submit" value="Login" />
                                 </div>
                             </form>
-                            <p className='my-4 text-center'>New to here please<Link className='text-orange-600 font-bold' to="/signUp">Register</Link>
+                            <p className='my-4 text-center'>New to Shutterbug Academy? please
+                                <Link className='text-orange-600 font-bold ml-2' to="/signUp">
+                                    Sign Up
+                                </Link>
                             </p>
                             <SocialLogin></SocialLogin>
                         </div>

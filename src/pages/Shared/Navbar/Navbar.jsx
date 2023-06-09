@@ -39,7 +39,7 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    {/* <a className="btn btn-ghost normal-case text-xl">daisyUI</a> */}
+                    
                     <Link to='/'><img src="https://i.ibb.co/nn8fPHd/DALL-E-2023-06-06-23-54-13-photography-logo.png" alt="" className='avatar mr-2' width='50px' height='50px' /></Link>
                     <Link to='/'>Shutterbug Academy</Link>
                 </div>
