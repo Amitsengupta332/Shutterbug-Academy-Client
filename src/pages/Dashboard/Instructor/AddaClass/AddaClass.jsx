@@ -2,7 +2,7 @@
 
 const AddaClass = () => {
     return (
-        <div>
+        <div className='pt-24 py-4'>
             <h2>add a class</h2>
         </div>
     );

@@ -6,13 +6,15 @@ import Registration from "../LoginLayout/Registration/Registration";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Dashboard from "../Layout/Dashboard";
 import PrivateRoutes from "./PrivateRoutes";
+import AddaClass from "../pages/Dashboard/Instructor/AddaClass/AddaClass";
+import AllUsers from "../pages/Dashboard/Admin/AllUsers/AllUsers";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element:<Main></Main>,
+        element: <Main></Main>,
         errorElement: <ErrorPage></ErrorPage>,
-        children:[
+        children: [
             {
                 path: '/',
                 element: <Home></Home>
@@ -27,7 +29,15 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard',
-                element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
+                element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+            },
+            {
+                path: '/AddClass',
+                element: <AddaClass></AddaClass>
+            },
+            {
+                path:'/allUsers',
+                element: <AllUsers></AllUsers>
             }
         ]
     },
