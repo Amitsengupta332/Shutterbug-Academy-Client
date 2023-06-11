@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { FaTrashAlt, FaUserShield } from "react-icons/fa";
+
 
 const AllUsers = () => {
     const { data: users = [], refetch } = useQuery(['users'], () => {
@@ -45,6 +45,7 @@ const AllUsers = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
+                            <th>Role</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,25 +56,32 @@ const AllUsers = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>
-                                    {user.role === 'instructor' ? (
-                                        'Instructor'
+                                    {user.role === 'admin' ? (
+                                        'admin'
                                     ) : (
-                                        <>
-                                            <button
-                                                onClick={() => handleMakeInstructor(user)}
-                                                className="btn btn-ghost bg-orange-600 text-white"
-                                            >
-                                                Make Instructor
-                                            </button>
-                                            <button
-                                                onClick={() => handleMakeAdmin(user)}
-                                                className="btn btn-ghost bg-orange-600 text-white"
-                                            >
-                                                Make Admin
-                                            </button>
-                                        </>
+                                        <button
+                                            onClick={() => handleMakeAdmin(user)}
+                                            className="btn btn-outline btn-success btn-xs text-white"
+                                        
+                                        >
+                                            Make Admin
+                                        </button>
                                     )}
                                 </td>
+                                <td>
+                                    {user.role === 'instructor' ? (
+                                        'instructor'
+                                    ) : (
+                                        <button
+                                            onClick={() => handleMakeInstructor(user)}
+                                            className="btn btn-outline btn-info btn-xs text-white"
+                                           
+                                        >
+                                            Make Instructor
+                                        </button>
+                                    )}
+                                </td>
+                              
                             </tr>
                         ))}
                     </tbody>
