@@ -70,18 +70,33 @@ export const router = createBrowserRouter([
     //     path: '/dashboard',
     //     element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
     //     children:[
-    //         {
-    //             path: 'AddClass',
-    //             element: <AddaClass></AddaClass>
-    //         },
-    //         {
-    //             path:'allUsers',
-    //             element: <AllUsers></AllUsers>
-    //         },
-    //         {
-    //             path:'manageUser',
-    //             element: <ManageUser></ManageUser>
-    //         }
+        // {
+        //     path: '/allUsers',
+        //     element: <AllUsers></AllUsers>
+        // },
+        // {
+        //     path: '/manageUser',
+        //     element: <ManageUser></ManageUser>
+        // },
+        // // instructor
+        // {
+        //     path: '/AddClass',
+        //     element: <AddaClass></AddaClass>
+        // },
+        // {
+        //     path: '/myClass',
+        //     element: <MyClass></MyClass>
+        // },
+        // // student
+        // {
+        //     path: '/selectedClass',
+        //     element: <SelectClass></SelectClass>
+        // },
+        // {
+        //     path: '/enrollClass',
+        //     element: <EnrollClass></EnrollClass>
+        // }
+    //         
     //     ]
     // },
 ]);

@@ -27,17 +27,17 @@ const Dashboard = () => {
                     <ul className="menu p-4 w-80 h-full bg-base-300 text-base-content">
                         {/* Sidebar content here */}
 
-                        {/* {} */}
                         {isAdmin && (
                             <>
                                 <li><Link to='/manageUser'>Manage Class</Link></li>
                                 <li><Link to='/allUsers'>Manage Users</Link></li>
                             </>
                         )}
+
                         {isInstructor && (
                             <>
-                                <li><Link to='/myClass'>My Class</Link></li>
                                 <li><Link to='/AddClass'>Add A Class</Link></li>
+                                <li><Link to='/myClass'>My Class</Link></li>
                             </>
                         )}
 
@@ -58,9 +58,6 @@ const Dashboard = () => {
                                 <>
                                 </>
                         } */}
-
-
-
                         {/* <li><a>Sidebar Item 2</a></li> */}
                     </ul>
 

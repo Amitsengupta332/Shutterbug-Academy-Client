@@ -1,17 +1,17 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../Provider/AuthProvider';
-// import useAuth from './useAuth';
- 
+
+import useAuth from './useAuth';
+
 
 
 const useAxiosSecure = () => {
-  const { logOut } =  useContext(AuthContext); 
-  const navigate = useNavigate(); 
+  const { logOut } = useAuth();
+  const navigate = useNavigate();
 
   const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000', 
+    baseURL: 'http://localhost:5000',
   });
 
   useEffect(() => {
@@ -36,6 +36,7 @@ const useAxiosSecure = () => {
   }, [logOut, navigate, axiosSecure]);
 
   return [axiosSecure];
+  
 };
 
 export default useAxiosSecure;
