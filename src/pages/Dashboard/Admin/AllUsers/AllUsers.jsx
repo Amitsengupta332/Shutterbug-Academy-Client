@@ -1,36 +1,87 @@
 import { useQuery } from "react-query";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 
 const AllUsers = () => {
-    const { data: users = [], refetch } = useQuery(['users'], () => {
-        return fetch('http://localhost:5000/users')
-            .then(res => res.json());
+    const [axiosSecure] = useAxiosSecure();
+    const { data: users = [], refetch } = useQuery(['users'], async () => {
+        const res = await axiosSecure.get('/users');
+        // return fetch('http://localhost:5000/users')
+        // .then(res => res.json());
+        return res.data;
     });
 
-    const handleMakeInstructor = (user) => {
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
-            method: "PATCH",
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount) {
-                    refetch()
-                }
-            })
+    // const makeAdmin = async (user) => {
+    // try {
+    //     const response = await axiosSecure.patch(/users/${user._id}/admin);
+    //     if (response.data.success) {
+    //         refetch();
+    //     }
+    // } catch (error) {
+    //     console.error('Error making admin:', error);
+    // }
+    // };
+
+    // const makeInstructor = async (user) => {
+    //     try {
+    //         const response = await axiosSecure.patch(/users/${user._id}/instructor);
+    //         if (response.data.success) {
+    //             refetch();
+    //         }
+    //     } catch (error) {
+    //         console.error('Error making instructor:', error);
+    //     }
+    // };
+
+    const handleMakeInstructor = async (user) => {
+        try {
+            const response = await axiosSecure.patch(`/users/instructor/${user._id}`);
+            if (response.data.success) {
+                refetch();
+            }
+        } catch (error) {
+            console.error('Error making instructor:', error);
+        }
+
+
+        // fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        //     method: "PATCH",
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         if (data.modifiedCount) {
+        //             refetch()
+        //         }
+        //     })
     };
 
-    const handleMakeAdmin = user => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
-            method: "PATCH",
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount) {
-                    refetch()
-                }
-            })
+
+
+
+
+    const handleMakeAdmin = async (user) => {
+
+        try {
+            const response = await axiosSecure.patch(`/users/admin/${user._id}`);
+            if (response.data.success) {
+                refetch();
+            }
+        } catch (error) {
+            console.error('Error making admin:', error);
+        }
+
+
+        // fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        //     method: "PATCH",
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         if (data.modifiedCount) {
+        //             refetch()
+        //         }
+        //     })
     }
 
     return (
@@ -55,33 +106,64 @@ const AllUsers = () => {
                                 <th>{index + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
+
                                 <td>
                                     {user.role === 'admin' ? (
                                         'admin'
                                     ) : (
                                         <button
                                             onClick={() => handleMakeAdmin(user)}
-                                            className="btn btn-outline btn-success btn-xs text-white"
-                                        
+                                            className="btn btn-success btn-sm text-white"
+                                            disabled={user.role === 'instructor'}
                                         >
                                             Make Admin
                                         </button>
                                     )}
                                 </td>
+
+                                {/* <td>
+                                    {user.role === 'admin' ? (
+                                        'admin'
+                                    ) : (
+                                        <button
+                                            onClick={() => handleMakeAdmin(user)}
+                                            className="btn btn-outline btn-success btn-xs text-white"
+
+                                        >
+                                            Make Admin
+                                        </button>
+                                    )}
+                                </td> */}
+
                                 <td>
+                                    {user.role === 'instructor' ? (
+                                        'instructor'
+                                    ) : (
+                                        <button
+                                            onClick={() => makeInstructor(user)}
+                                            className="btn btn-info btn-sm text-white"
+                                            disabled={user.role === 'admin'}
+                                        >
+                                            Make Instructor
+                                        </button>
+                                    )}
+                                </td>
+
+
+                                {/* <td>
                                     {user.role === 'instructor' ? (
                                         'instructor'
                                     ) : (
                                         <button
                                             onClick={() => handleMakeInstructor(user)}
                                             className="btn btn-outline btn-info btn-xs text-white"
-                                           
+
                                         >
                                             Make Instructor
                                         </button>
                                     )}
-                                </td>
-                              
+                                </td> */}
+
                             </tr>
                         ))}
                     </tbody>
