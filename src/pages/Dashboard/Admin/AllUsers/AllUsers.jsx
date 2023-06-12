@@ -36,7 +36,8 @@ const AllUsers = () => {
     const handleMakeInstructor = async (user) => {
         try {
             const response = await axiosSecure.patch(`/users/instructor/${user._id}`);
-            if (response.data.success) {
+            console.log(response);
+            if (response) {
                 refetch();
             }
         } catch (error) {
@@ -64,7 +65,7 @@ const AllUsers = () => {
 
         try {
             const response = await axiosSecure.patch(`/users/admin/${user._id}`);
-            if (response.data.success) {
+            if (response) {
                 refetch();
             }
         } catch (error) {
@@ -113,7 +114,7 @@ const AllUsers = () => {
                                     ) : (
                                         <button
                                             onClick={() => handleMakeAdmin(user)}
-                                            className="btn btn-success btn-sm text-white"
+                                            className="btn btn-outline btn-success btn-xs text-white"
                                             disabled={user.role === 'instructor'}
                                         >
                                             Make Admin
@@ -140,8 +141,8 @@ const AllUsers = () => {
                                         'instructor'
                                     ) : (
                                         <button
-                                            onClick={() => makeInstructor(user)}
-                                            className="btn btn-info btn-sm text-white"
+                                            onClick={() => handleMakeInstructor(user)}
+                                            className="btn btn-outline btn-info btn-xs text-white"
                                             disabled={user.role === 'admin'}
                                         >
                                             Make Instructor

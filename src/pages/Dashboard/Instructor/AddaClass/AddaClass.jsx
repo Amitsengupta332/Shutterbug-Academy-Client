@@ -12,7 +12,7 @@ const AddaClass = () => {
     const onSubmit = data => {
         console.log(data)
         const { email, iName, name, photo, price, seats } = data;
-        const newItem = { name, price, iName, email, seats, photo }
+        const newItem = { name, price: parseFloat(price), iName, email, seats: parseFloat(seats), photo, status: "pending"}
         console.log(newItem);
 
         // axiosSecure.post('/addClass', data)
@@ -27,7 +27,7 @@ const AddaClass = () => {
         axiosSecure
             .post('/addClass', newItem)
             .then((response) => {
-                console.log('after posting new menu item', response.data);
+                console.log('after posting Add Class', response.data);
 
                 if (response.data.insertedId) {
                     reset();
