@@ -12,6 +12,8 @@ import ManageUser from "../pages/Dashboard/Admin/ManageUser/ManageUser";
 import MyClass from "../pages/Dashboard/Instructor/MyClass/MyClass";
 import SelectClass from "../pages/Dashboard/Student/SelectClass/SelectClass";
 import EnrollClass from "../pages/Dashboard/Student/EnrollClass/EnrollClass";
+import Classes from "../pages/Classes/Classes";
+import Instructor from "../pages/Instructor/Instructor";
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +32,14 @@ export const router = createBrowserRouter([
             {
                 path: '/signUp',
                 element: <Registration></Registration>
+            },
+            {
+                path: '/classes',
+                element: <Classes></Classes>
+            },
+            {
+                path: '/instructor',
+                element: <Instructor></Instructor>
             },
             {
                 path: '/dashboard',

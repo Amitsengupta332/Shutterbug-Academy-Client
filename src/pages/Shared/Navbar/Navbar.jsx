@@ -14,8 +14,8 @@ const Navbar = () => {
     const navLink =
         <>
             <li><Link to='/'>Home</Link></li>
-            <li><Link to=''>Instructors</Link></li>
-            <li><Link to=''>Classes</Link></li>
+            <li><Link to='/instructor'>Instructors</Link></li>
+            <li><Link to='/classes'>Classes</Link></li>
 
             {
                 user?.email ?

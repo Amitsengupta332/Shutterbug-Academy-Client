@@ -38,7 +38,7 @@ const ManageUser = () => {
                 <table className="table table-zebra">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className='font-semibold text-blue-500'>
                             <th>#</th>
                             <th>Class Image</th>
                             <th>Class name</th>
@@ -47,9 +47,9 @@ const ManageUser = () => {
                             <th>Available seats</th>
                             <th>Price</th>
                             <th>Status</th>
-                            <th>Action</th>
-                            <th>Action</th>
-                            <th>Info</th>
+                            <th>Approve</th>
+                            <th>Deny</th>
+                            <th>Feedback</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,33 +60,33 @@ const ManageUser = () => {
                                 <td>
                                     <div className="flex items-center space-x-3">
                                         <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src={addItem?.imgURL} alt="Avatar Tailwind CSS Component" />
+                                            <div className=" w-24 h-24 rounded">
+                                                <img src={addItem?.photo} alt="Avatar " />
                                             </div>
                                         </div>
                                     </div>
                                 </td>
-                                <td>{addItem?.className}</td>
-                                <td>{addItem?.instructorName}</td>
-                                <td>{addItem?.instructorEmail}</td>
-                                <td>{addItem?.availableSeats}</td>
+                                <td>{addItem?.name}</td>
+                                <td>{addItem?.iName}</td>
+                                <td>{addItem?.email}</td>
+                                <td>{addItem?.seats}</td>
                                 <td>{addItem?.price}</td>
                                 <td>
                                     {addItem?.status === 'pending' && (
-                                        <button className='btn btn-xs bg-yellow-200'>Pending</button>
+                                        <button className='btn btn-xs btn-outline btn-warning'>Pending</button>
                                     )}
                                     {addItem?.status === 'approved' && (
-                                        <button className='btn btn-xs bg-green-300' >Approved</button>
+                                        <button className='btn btn-outline btn-success btn-xs' >Approved</button>
                                     )}
                                     {addItem?.status === 'denied' && (
-                                        <button className='btn btn-xs bg-red-300' >Denied</button>
+                                        <button className='btn btn-xs btn-outline btn-error' >Denied</button>
                                     )}
                                 </td>
                                 <td>
                                     {addItem?.status === 'pending' && (
                                         // onClick={() => handleApprove(addItem._id)}
                                         <button
-                                            className='btn btn-xs bg-green-300'
+                                            className='btn btn-xs btn-outline btn-success'
                                             onClick={() => handleApproveClass(addItem?._id)}
                                         >Approve</button>
                                     )}
@@ -96,11 +96,12 @@ const ManageUser = () => {
                                     {addItem?.status === 'pending' && (
                                         <button
                                             onClick={() => handleDenyClass(addItem?._id)}
-                                            className='btn btn-xs bg-red-300'>Deny</button>
+                                            className='btn btn-xs btn-outline btn-error'>Deny</button>
                                     )}
                                 </td>
                                 <td>
-                                    <button className="btn btn-info btn-xs">FeedBack</button>
+                                    <button
+                                        className="btn btn-outline btn-info btn-xs">FeedBack</button>
                                 </td>
                             </tr>
                         ))}
