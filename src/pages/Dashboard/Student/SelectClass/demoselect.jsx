@@ -8,24 +8,7 @@ const SelectClass = () => {
   const { user, loading, setSelectClass } = useAuth();
   const [selectedClasses, refetch] = useSelectedClasses()
   console.log(selectedClasses);
-  console.log(selectedClasses);
   const [axiosSecure] = useAxiosSecure();
-
-  const handleDelete = classItem => {
-    // axiosSecure.delete(`/api/selectclass/${selectClass.id}`)
-    axiosSecure.delete(`/selectedClasses/${classItem._id}`)
-      .then(res => {
-        console.log('deleted res', res.data);
-        if (res.data.deletedCount > 0) {
-          refetch();
-          console.log('Class deleted successfully.');
-        }
-      })
-      .catch(error => {
-        console.error('Error occurred while deleting the class:', error);
-        console.log('Failed to delete the class. Please try again.');
-      });
-  }
 
   return (
     <>
@@ -60,17 +43,20 @@ const SelectClass = () => {
                     </div>
                   </td>
                   <td>{classItem.name}</td>
-                  <td>{classItem.price}</td>
-
+                  <td>{selectClass.price}</td>
                   <td>
-                    <Link to={`/payment?id=${classItem._id}`}><button className="btn btn-success btn-sm">Buy</button></Link>
+                    <Link to={`/payment?id=${selectClass._id}`}><button className="btn btn-success btn-sm">Buy</button></Link>
                   </td>
                   <td>
-                    <button onClick={() => handleDelete(classItem)} className="btn btn-error btn-sm">Delete</button>
+                    <button onClick={() => handleDelete(selectClass)} className="btn btn-error btn-sm">Delete</button>
                   </td>
                 </tr>
               ))}
+
+
             </tbody>
+
+
           </table>
         </div>
       </div>

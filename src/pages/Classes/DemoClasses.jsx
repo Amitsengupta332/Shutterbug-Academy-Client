@@ -12,7 +12,6 @@ const Classes = () => {
     const [isInstructor] = useInstructor();
     // console.log(isInstructor);
     const { user } = useAuth();
-    console.log(user);
     const [addClass, ,] = usePopularClass();
     const location = useLocation();
     const navigate = useNavigate();
@@ -22,7 +21,6 @@ const Classes = () => {
     const classes = addClass.filter((clas) => clas.status === 'approved');
 
     const from = location.state?.from?.pathname || '/login'
-
     const handleSelectCourse = (clas) => {
         // console.log(clas);
 
@@ -30,9 +28,18 @@ const Classes = () => {
             // const { _id, iName, email, seats, photo, status, name, price } = clas;
 
             const classData = {
+                // _id,
+                // iName,
+                // email,
+                // seats,
+                // photo,
+                // status,
+                // name,
+                // price,
+
                 _id: clas._id,
                 iName: clas.iName,
-                email: user?.email,
+                email: clas.email,
                 seats: clas.seats,
                 photo: clas.photo,
                 status: clas.status,
@@ -41,7 +48,7 @@ const Classes = () => {
             };
             console.log(classData)
 
-            fetch('http://localhost:5000/selectedClasses', {
+            fetch('http://localhost:5000/selectClasses', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -50,16 +57,12 @@ const Classes = () => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data);
                     if (data.success) {
-                        const responseData = data.data; // Extract the response data
-                        console.log(responseData); // Log the extracted response data
-                        // refetch();
+                        refetch();
                     }
                 })
                 .catch((error) => {
                     console.error('Error occurred while selecting a class:', error);
-                    // console.error('Error occurred while selecting a class:', error);
 
                 });
         } else {

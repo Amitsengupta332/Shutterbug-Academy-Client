@@ -11,27 +11,6 @@ const AllUsers = () => {
         return res.data;
     });
 
-    // const makeAdmin = async (user) => {
-    // try {
-    //     const response = await axiosSecure.patch(/users/${user._id}/admin);
-    //     if (response.data.success) {
-    //         refetch();
-    //     }
-    // } catch (error) {
-    //     console.error('Error making admin:', error);
-    // }
-    // };
-
-    // const makeInstructor = async (user) => {
-    //     try {
-    //         const response = await axiosSecure.patch(/users/${user._id}/instructor);
-    //         if (response.data.success) {
-    //             refetch();
-    //         }
-    //     } catch (error) {
-    //         console.error('Error making instructor:', error);
-    //     }
-    // };
 
     const handleMakeInstructor = async (user) => {
         try {
@@ -44,17 +23,6 @@ const AllUsers = () => {
             console.error('Error making instructor:', error);
         }
 
-
-        // fetch(`http://localhost:5000/users/instructor/${user._id}`, {
-        //     method: "PATCH",
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.modifiedCount) {
-        //             refetch()
-        //         }
-        //     })
     };
 
 
@@ -72,17 +40,6 @@ const AllUsers = () => {
             console.error('Error making admin:', error);
         }
 
-
-        // fetch(`http://localhost:5000/users/admin/${user._id}`, {
-        //     method: "PATCH",
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.modifiedCount) {
-        //             refetch()
-        //         }
-        //     })
     }
 
     return (
