@@ -3,9 +3,10 @@ import useAuth from '../../../../hooks/useAuth';
 import useSelectedClasses from '../../../../hooks/useSelectedClasses';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import { Link } from 'react-router-dom';
+import { FaShoppingCart, FaTrashAlt, FaMoneyBillAlt } from "react-icons/fa";
 
 const SelectClass = () => {
-  const { user, loading, setSelectClass } = useAuth();
+  const { user, loading  } = useAuth();
   const [selectedClasses, refetch] = useSelectedClasses()
   console.log(selectedClasses);
   console.log(selectedClasses);
@@ -37,7 +38,7 @@ const SelectClass = () => {
             <thead>
               <tr>
                 <th>#</th>
-                <th>Img</th>
+                <th>Image</th>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Pay</th>
@@ -53,20 +54,21 @@ const SelectClass = () => {
                   <td>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
+                        <div className=" w-24 h-24 rounded">
                           <img src={classItem?.photo} alt="Avatar " />
                         </div>
                       </div>
                     </div>
                   </td>
                   <td>{classItem.name}</td>
-                  <td>{classItem.price}</td>
+                  <td>${classItem.price}</td>
 
                   <td>
-                    <Link to={`/payment?id=${classItem._id}`}><button className="btn btn-success btn-sm">Buy</button></Link>
+                    <Link to={`/payment?id=${classItem._id}`}><button className="btn btn-outline btn-success "><FaShoppingCart></FaShoppingCart></button></Link>
+                    {/* <FaShoppingCart></FaShoppingCart> */}
                   </td>
                   <td>
-                    <button onClick={() => handleDelete(classItem)} className="btn btn-error btn-sm">Delete</button>
+                    <button onClick={() => handleDelete(classItem)} className="btn btn-outline btn-error"><FaTrashAlt></FaTrashAlt></button>
                   </td>
                 </tr>
               ))}
