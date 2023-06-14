@@ -48,7 +48,7 @@ const Classes = () => {
             };
             console.log(classData)
 
-            fetch('http://localhost:5000/selectClasses', {
+            fetch('https://summer-camp-school-server-psi.vercel.app/selectClasses', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

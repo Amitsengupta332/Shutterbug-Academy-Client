@@ -6,7 +6,7 @@ const AllUsers = () => {
     const [axiosSecure] = useAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
         const res = await axiosSecure.get('/users');
-        // return fetch('http://localhost:5000/users')
+        // return fetch('https://summer-camp-school-server-psi.vercel.app/users')
         // .then(res => res.json());
         return res.data;
     });

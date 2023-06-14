@@ -3,7 +3,7 @@
 
 
  * Live Link ->
- Hosted in Firebase -> [Shutterbug Academy]( https://toy-marketplace-5ed0a.web.app/)
+ Hosted in Firebase -> [Shutterbug Academy]( https://summer-camp-school-7bd49.web.app/classes)
 
 
  * GitHub Client 
@@ -26,6 +26,9 @@ Documentation Link -> [Link](https://github.com/brillout/awesome-react-component
 
 * React Query
 Documentation Link -> [Link](https://tanstack.com/query/v3/docs/react/installation)
+
+* Stripe js
+Documentation Link -> [Link](https://stripe.com/docs/js)
 
 * JWT(Json Web Token)
 Documentation Link -> [Link](https://jwt.io/)

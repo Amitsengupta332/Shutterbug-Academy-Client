@@ -3,12 +3,12 @@ import { FaTrashAlt, FaUserShield } from "react-icons/fa";
 
 const AllUsers = () => {
     const { data: users = [], refetch } = useQuery(['users'], () => {
-        return fetch('http://localhost:5000/users')
+        return fetch('https://summer-camp-school-server-psi.vercel.app/users')
             .then(res => res.json());
     });
 
     const handleMakeInstructor = (user) => {
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        fetch(`https://summer-camp-school-server-psi.vercel.app/users/instructor/${user._id}`, {
             method: "PATCH",
         })
             .then(res => res.json())
@@ -21,7 +21,7 @@ const AllUsers = () => {
     };
 
     const handleMakeAdmin = user => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://summer-camp-school-server-psi.vercel.app/users/admin/${user._id}`, {
             method: "PATCH",
         })
             .then(res => res.json())
@@ -115,12 +115,12 @@ import { FaTrashAlt, FaUserShield } from "react-icons/fa";
 
 const AllUsers = () => {
     const { data: users = [], refetch } = useQuery(['users'], () => {
-        return fetch('http://localhost:5000/users')
+        return fetch('https://summer-camp-school-server-psi.vercel.app/users')
             .then(res => res.json());
     });
 
     const handleMakeInstructor = (user) => {
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        fetch(`https://summer-camp-school-server-psi.vercel.app/users/instructor/${user._id}`, {
             method: "PATCH",
         })
             .then(res => res.json())
@@ -133,7 +133,7 @@ const AllUsers = () => {
     };
 
     const handleMakeAdmin = user => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://summer-camp-school-server-psi.vercel.app/users/admin/${user._id}`, {
             method: "PATCH",
         })
             .then(res => res.json())

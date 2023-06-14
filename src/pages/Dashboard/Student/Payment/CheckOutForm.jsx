@@ -102,7 +102,7 @@ const CheckOutForm = ({ selectedClass }) => {
 
 
                     if (res.data.insertResult.insertedId) {
-                        axios.patch(`http://localhost:5000/addClass/${selectedClass._id}`)
+                        axios.patch(`https://summer-camp-school-server-psi.vercel.app/addClass/${selectedClass._id}`)
                             .then(res => {
                                 console.log(res.data); // Updated class data from the server
                             })
